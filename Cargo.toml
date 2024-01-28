@@ -2,7 +2,7 @@
 name = "array_segments"
 version = "0.1.0"
 edition = "2021"
-license = "mit"
+license = "MIT"
 description = "Store arrays in segment-lengths"
 repository = "https://github.com/sigurd4/array_segments"
 keywords = ["array", "util", "segments", "parts"]
