@@ -1,3 +1,5 @@
+use std::fmt::Debug;
+
 use array__ops::{slice_ops, ArrayOps};
 
 use super::*;
@@ -44,6 +46,18 @@ pub const fn all_len_eq<const A: &'static [usize], const B: &'static [usize]>() 
 pub struct ArraySegments<T, const SEGMENT_LENGTHS: &'static [usize]>([T; sum_len::<{SEGMENT_LENGTHS}>()])
 where
     [(); sum_len::<{SEGMENT_LENGTHS}>()]:;
+
+impl<T, const SEGMENT_LENGTHS: &'static [usize]> Debug for ArraySegments<T, SEGMENT_LENGTHS>
+where
+    T: Debug,
+    [(); sum_len::<{SEGMENT_LENGTHS}>()]:,
+    [(); SEGMENT_LENGTHS.len()]:
+{
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result
+    {
+        Debug::fmt(&self.each_slice(), f)
+    }
+}
 
 impl<T, const SEGMENT_LENGTHS: &'static [usize]> ArraySegments<T, SEGMENT_LENGTHS>
 where
