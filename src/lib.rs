@@ -25,13 +25,13 @@ mod tests
     {
         let tuple = ([1u8, 2], [3u8, 4, 5], [6u8, 7]);
 
-        let partition = ArraySegments::<u8, {&[2usize, 3, 2]}>::new(tuple.0.chain(tuple.1).chain(tuple.2));
+        let segments = ArraySegments::<u8, {&[2usize, 3, 2]}>::new(tuple.0.chain(tuple.1).chain(tuple.2));
     
-        assert_eq!(Some(tuple.0.as_slice()), partition.get_slice(0));
-        assert_eq!(Some(tuple.1.as_slice()), partition.get_slice(1));
-        assert_eq!(Some(tuple.2.as_slice()), partition.get_slice(2));
+        assert_eq!(Some(tuple.0.as_slice()), segments.get_slice(0));
+        assert_eq!(Some(tuple.1.as_slice()), segments.get_slice(1));
+        assert_eq!(Some(tuple.2.as_slice()), segments.get_slice(2));
 
         println!("o = {:?}", ArraySegments::<u8, {&[2usize, 3, 2]}>::each_offset());
-        println!("a = {:?}", partition.each_slice());
+        println!("a = {:?}", segments);
     }
 }
