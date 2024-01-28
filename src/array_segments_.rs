@@ -40,6 +40,7 @@ pub const fn all_len_eq<const A: &'static [usize], const B: &'static [usize]>() 
     true
 }
 
+#[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord)]
 pub struct ArraySegments<T, const SEGMENT_LENGTHS: &'static [usize]>([T; sum_len::<{SEGMENT_LENGTHS}>()])
 where
     [(); sum_len::<{SEGMENT_LENGTHS}>()]:;
