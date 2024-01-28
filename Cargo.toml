@@ -1,0 +1,14 @@
+[package]
+name = "array_segments"
+version = "0.1.0"
+edition = "2021"
+license = "mit"
+description = "Store arrays in segment-lengths"
+repository = "https://github.com/sigurd4/array_segments"
+keywords = ["array", "util", "segments", "parts"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+moddef = "0.2.2"
+array__ops = "0.1.10"
