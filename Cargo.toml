@@ -1,6 +1,6 @@
 [package]
 name = "array_segments"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "MIT"
 description = "Store arrays in segment-lengths"
@@ -11,4 +11,4 @@ keywords = ["array", "util", "segments", "parts"]
 
 [dependencies]
 moddef = "0.2.2"
-array__ops = "0.1.10"
+array__ops = "0.1.12"
