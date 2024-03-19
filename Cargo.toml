@@ -11,4 +11,4 @@ keywords = ["array", "util", "segments", "parts"]
 
 [dependencies]
 moddef = "0.2.2"
-array__ops = "0.1.13"
+array__ops = "0.1.14"
